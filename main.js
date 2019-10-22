@@ -5,7 +5,7 @@
 
 
 // rick and morty!!
-
+const container = document.querySelector('.container')
 const button = document.querySelector('#random');
 const rickAndMortyUrl = "https://rickandmortyapi.com/api/character/";
 
@@ -16,23 +16,49 @@ const getRickAndMortyCharacters = () => {
         method: 'get',
     })
     .then (res => {
-        console.log(res);
-        
-        console.log(res.data);
         res.data.forEach(char => {
-            console.log(char)
             const img = document.createElement('img');
             let characterImg =char.image;
-            console.log(characterImg)
             img.src =characterImg;
-            document.body.appendChild(img)
-        });
-        // const charImg = res.data.results[0].url;
+            container.appendChild(img)
+        });        
+    })
 
-
-        
+    .catch(err => {
+        console.log(err)
     })
 }
 
 
 button.addEventListener('click', getRickAndMortyCharacters)
+
+
+// studio ghibli api
+const studioGhibliUrl = 'https://ghibliapi.herokuapp.com/films';
+
+const getStudioGhibliMovies = () => {
+    axios({
+        url: studioGhibliUrl,
+        method: 'get',
+    })
+
+    .then(res => {
+        res.data.forEach(movie => {            
+            const header = document.createElement('h3');
+            const paragraph = document.createElement('p')
+            let movieTitle = movie.title;
+            let movieDescription = movie.description;
+            header.innerText=movieTitle;
+            paragraph.innerText = movieDescription;
+            container.appendChild(header);
+            container.appendChild(paragraph);
+        })        
+    })
+
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+
+button.addEventListener('click', getStudioGhibliMovies)
