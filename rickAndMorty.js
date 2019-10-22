@@ -7,11 +7,10 @@
 const rickbutton = document.querySelector('#rick-and-morty')
 rickbutton.style.display='block'
 rickbutton.style.margin='5px'
-const apiurl = 'https://rickandmortyapi.com/api/character/'
+const apiurl = 'https://rickandmortyapi.com/api/character/[1,2,3,4,5]'
 const gitCharecter = () => {
-  for(let i =1;i<=5;i++){
   axios({
-    url: apiurl+i,
+    url: apiurl,
     method: 'get'
   })
   .then (success=>{
@@ -20,9 +19,11 @@ const gitCharecter = () => {
   })
   .catch(error=>
     console.log(error))
-  }}
+  }
   
   const printCharecter = (result) =>{
+
+    result.data.forEach(character =>{
     const div = document.createElement('div')
       const name = document.createElement('p')
       const img = document.createElement('img')
@@ -34,8 +35,8 @@ const gitCharecter = () => {
       document.body.appendChild(div)
       div.appendChild(name)
       div.appendChild(img)
-      name.innerText = result.data.name
-      img.setAttribute( 'src',result.data.image)
+      name.innerText =character.name
+      img.setAttribute( 'src',character.image)})
 
   }
   rickbutton.addEventListener('click',gitCharecter)
