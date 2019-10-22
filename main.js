@@ -3,6 +3,8 @@ const rickAndMortyUrl = 'https://rickandmortyapi.com/api/character/1,2,3,4,5';
 const container = document.querySelector('.container');
 container.style.display='inline-block';
 const button = document.querySelector('#random');
+button.style.display='block';
+button.style.margin='auto';
 
 const getCharacters = () => {
     axios({
