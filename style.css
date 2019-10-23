@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.container img{
+    padding: 10px;
+}
+h1{
+    text-align: center;
+}
+#random{
+    margin: 0 0 0 700px;
+}
