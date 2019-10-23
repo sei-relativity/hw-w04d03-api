@@ -2,3 +2,70 @@
 // Go back to the lesson if you feel lost
 // Read the docs well, they usually have pretty well documented examples
 // Consider making your fetch work with a button
+
+const img =document.createElement('img');
+const button = document.querySelector('button');
+const apiUrl = `https://rickandmortyapi.com/api/character/[1,2,3,4,5]`;
+// const numItemsToGenerate = 1;
+
+const getRickAndMorty =() =>{
+    axios({
+        url:apiUrl ,
+        method:'get',
+    })
+        .then( res=>{
+            console.log(res);
+            res.data.forEach(element => {
+                const imgUrl=element.image;
+                //  const imgUrl=res.data[0].url;
+                img.src=imgUrl;
+                document.body.appendChild(img);    
+            });
+           
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    
+    }
+
+button.addEventListener('click',getRickAndMorty);
+// for(let i=0;i<=5;i++){
+//     getRickAndMorty();
+//   }
+
+
+
+//   const div =document.createElement('Div');
+//   const button = document.querySelector('button');
+//   const apiUrl = `https://rickandmortyapi.com/api/character/[1,2,3,4,5]`;
+//   button.innerText="Random";
+//   const numItemsToGenerate = 1;
+  
+//   const getRandomCat =() =>{
+//       axios({
+//           url:apiUrl,
+//           method:'get',
+//       })
+//           .then( res=>{
+//               console.log(res);
+//               const imgUrl=res.data[0].image;
+//               // for(data[0])
+//               img.src=imgUrl;
+//               document.body.appendChild(img);
+//           })
+//           .catch(err =>{
+//               console.log(err)
+//           })
+      
+//       }
+  
+//   button.addEventListener('click',getRandomCat);
+//   // document.body.append(button);
+//   for(let i=0;i<numItemsToGenerate;i++){
+//       getRandomCat();
+//     }
+  
+  
+
+  
