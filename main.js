@@ -36,23 +36,24 @@ button.addEventListener('click',getRickAndMorty);
 
 
 
-//   const div =document.createElement('Div');
+//   const div =document.createElement('div');
 //   const button = document.querySelector('button');
-//   const apiUrl = `https://rickandmortyapi.com/api/character/[1,2,3,4,5]`;
-//   button.innerText="Random";
-//   const numItemsToGenerate = 1;
+//   const apiUrl = `https://ghibliapi.herokuapp.com/films`;
+//  
+//   
   
-//   const getRandomCat =() =>{
+//   const getTitleAndDesc =() =>{
 //       axios({
 //           url:apiUrl,
 //           method:'get',
 //       })
 //           .then( res=>{
 //               console.log(res);
-//               const imgUrl=res.data[0].image;
-//               // for(data[0])
-//               img.src=imgUrl;
-//               document.body.appendChild(img);
+                res.data.forEach(film => {
+                 const divUrl=film.[title,description])};
+//               const divUrl=res.data[0].[title ,description;
+//               div.src=divUrl;
+//               document.body.appendChild(div);
 //           })
 //           .catch(err =>{
 //               console.log(err)
@@ -60,11 +61,7 @@ button.addEventListener('click',getRickAndMorty);
       
 //       }
   
-//   button.addEventListener('click',getRandomCat);
-//   // document.body.append(button);
-//   for(let i=0;i<numItemsToGenerate;i++){
-//       getRandomCat();
-//     }
+//   button.addEventListener('click',getTitleAndDesc);
   
   
 
