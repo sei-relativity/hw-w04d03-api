@@ -1,0 +1,24 @@
+.container {
+  text-align: center;
+}
+
+#random {
+  margin: 1em;
+  border-radius: 5px;
+}
+
+figure {
+  position: relative;
+  margin: 1em;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  background-color: #212121;
+  color: #fafafa;
+  position: absolute;
+}
