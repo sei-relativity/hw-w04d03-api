@@ -1,4 +1,30 @@
-// Remember your promises
-// Go back to the lesson if you feel lost
-// Read the docs well, they usually have pretty well documented examples
-// Consider making your fetch work with a button
+
+const rickImg = document.createElement('img'),
+mortyImg = document.createElement('img'),
+summerImg = document.createElement('img'),
+bethImg = document.createElement('img'),
+jerryImg = document.createElement('img'),
+apiUrl="https://rickandmortyapi.com/api/character/",
+button = document.querySelector("#random") ;
+
+const getImg = () =>{
+axios ({
+    url : apiUrl,
+    method: 'get'
+})
+.then (res => {
+
+    console.log(res)
+            img.src=res.
+            document.body.appendChild(img)
+
+
+})
+.catch (err => {
+    console.log(err)
+})
+
+
+
+}
+button.addEventListener('click', getImg);
