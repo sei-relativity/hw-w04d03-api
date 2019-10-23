@@ -16,6 +16,9 @@ const getRickAndMorty =() =>{
         .then( res=>{
             console.log(res);
             res.data.forEach(element => {
+              const titleName = document.createElement('p');
+              name.innerText=element.name; 
+                document.body.appendChild(img); 
                 const imgUrl=element.image;
                 //  const imgUrl=res.data[0].url;
                 img.src=imgUrl;
@@ -49,8 +52,8 @@ button.addEventListener('click',getRickAndMorty);
 //       })
 //           .then( res=>{
 //               console.log(res);
-                res.data.forEach(film => {
-                 const divUrl=film.[title,description])};
+                // res.data.forEach(film => {
+                //  const divUrl=film.[title,description])};
 //               const divUrl=res.data[0].[title ,description;
 //               div.src=divUrl;
 //               document.body.appendChild(div);
