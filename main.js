@@ -8,7 +8,8 @@ const showCharacters = () => {
     .then(res => {
         res.data.forEach(item => {
             const img = document.createElement('img');
-            
+            img.style.margin = '2% 38%'
+
             let image = item.image;
             img.src = image;
             container.appendChild(img);
